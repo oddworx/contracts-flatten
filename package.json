@@ -2,7 +2,7 @@
   "scripts": {
     "chain": "hardhat node",
     "build": "hardhat compile",
-    "setup": "ts-node scripts/setup.ts",
+    "setup": "ts-node setup.ts",
     "typechain": "yarn build && yarn typechain:genzee && yarn typechain:oddworx && yarn typechain:oddworx-staking && yarn typechain:golden-pass",
     "typechain:genzee": "typechain --target ethers-v5 --out-dir scripts/contracts artifacts/contracts/Genzee.sol/Genzee.json",
     "typechain:oddworx": "typechain --target ethers-v5 --out-dir scripts/contracts artifacts/contracts/Oddworx.sol/Oddworx.json",
