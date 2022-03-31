@@ -1,8 +1,8 @@
 // Sources flattened with hardhat v2.8.0 https://hardhat.org
+// SPDX-License-Identifier: AGLP-3.0-only
 
 // File @rari-capital/solmate/src/tokens/ERC20.sol@v6.2.0
 
-// SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity >=0.8.0;
 
 /// @notice Modern and gas efficient ERC20 + EIP-2612 implementation.
@@ -201,7 +201,6 @@ abstract contract ERC20 {
 
 // File contracts/IGenzee.sol
 
-// SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.4;
 
 interface IGenzee {
@@ -214,7 +213,6 @@ interface IGenzee {
 
 // File @openzeppelin/contracts/utils/Context.sol@v4.4.2
 
-// SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
 
 pragma solidity ^0.8.0;
@@ -242,7 +240,6 @@ abstract contract Context {
 
 // File @openzeppelin/contracts/security/Pausable.sol@v4.4.2
 
-// SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (security/Pausable.sol)
 
 pragma solidity ^0.8.0;
@@ -335,7 +332,6 @@ abstract contract Pausable is Context {
 
 // File contracts/Oddworx.sol
 
-// SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.4;
 
 

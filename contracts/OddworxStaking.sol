@@ -1,8 +1,8 @@
 // Sources flattened with hardhat v2.8.0 https://hardhat.org
+// SPDX-License-Identifier: AGLP-3.0-only
 
 // File contracts/IOddworx.sol
 
-// SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.4;
 
 interface IOddworx {
@@ -14,7 +14,6 @@ interface IOddworx {
 
 // File @openzeppelin/contracts/utils/introspection/IERC165.sol@v4.4.2
 
-// SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)
 
 pragma solidity ^0.8.0;
@@ -43,7 +42,6 @@ interface IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721.sol@v4.4.2
 
-// SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (token/ERC721/IERC721.sol)
 
 pragma solidity ^0.8.0;
@@ -188,7 +186,6 @@ interface IERC721 is IERC165 {
 
 // File @openzeppelin/contracts/utils/Context.sol@v4.4.2
 
-// SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
 
 pragma solidity ^0.8.0;
@@ -216,7 +213,6 @@ abstract contract Context {
 
 // File @openzeppelin/contracts/security/Pausable.sol@v4.4.2
 
-// SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (security/Pausable.sol)
 
 pragma solidity ^0.8.0;
@@ -309,7 +305,6 @@ abstract contract Pausable is Context {
 
 // File contracts/OddworxStaking.sol
 
-// SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.4;
 
 

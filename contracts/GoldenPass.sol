@@ -575,7 +575,7 @@ contract GoldenPass is IGoldenPass, ERC1155, Ownable {
 
     // Controller Only
 
-    function burn(address from, uint256 amount) external onlyController {
+    function burn(address from, uint256 amount) external override onlyController {
         _burn(from, 1, amount);
         // totalSupply is not decremented because otherwise people will be able
         // to mint after the limit is reached
