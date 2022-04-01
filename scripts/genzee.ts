@@ -18,12 +18,10 @@ export const mint = async (wallet: Wallet, amount: number) => {
 
   // This is too slow, enhance!
   for (let i = 0; i < howManyTrios; i++) {
-    console.log(i)
     await genzee.mintThreeGenzee({ value: tripleUnitPrice });
   }
 
   for (let i = 0; i < howManyUnits; i++) {
-    console.log(i)
     await genzee.mintOneGenzee({ value: unitPrice });
   }
 };
