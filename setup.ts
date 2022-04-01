@@ -1,19 +1,24 @@
 import { wallets } from "./scripts/wallets";
 import { deployAll } from "./scripts/deploy";
 import * as Genzee from "./scripts/genzee";
-import * as Oddworx from "./scripts/oddworx"
+import * as Oddworx from "./scripts/oddworx";
+import * as OddworxStaking from "./scripts/oddworx-staking";
 import { contractAddress } from "./scripts/common";
 import { parseEther } from "ethers/lib/utils";
 
 const main = async () => {
   await deployAll();
-  
+
   await Genzee.startSale();
   await Genzee.mint(wallets[1], 20);
+  await Genzee.setApproveForAll(wallets[1], contractAddress.staking);
 
   await Oddworx.toggleAdmin(contractAddress.staking);
-  await Oddworx.mint(wallets[1].address, parseEther("900"))
+  await Oddworx.mint(wallets[1].address, parseEther("900"));
 
+  await OddworxStaking.setupGenzees();
+  await OddworxStaking.toggleGoldenPass();
+  await OddworxStaking.stakeGenzees(wallets[1], ["1", "2", "3"]);
 };
 
 main();

@@ -5,8 +5,8 @@ import { deployer } from "./deploy";
 
 export const startSale = async () => {
   const genzee = Genzee__factory.connect(contractAddress.genzee, deployer);
-  await genzee.startSale(await genzee.TOTAL_TOKENS())
-}
+  await genzee.startSale(await genzee.TOTAL_TOKENS());
+};
 
 export const mint = async (wallet: Wallet, amount: number) => {
   const genzee = Genzee__factory.connect(contractAddress.genzee, wallet);
@@ -24,4 +24,9 @@ export const mint = async (wallet: Wallet, amount: number) => {
   for (let i = 0; i < howManyUnits; i++) {
     await genzee.mintOneGenzee({ value: unitPrice });
   }
+};
+
+export const setApproveForAll = async (wallet: Wallet, operator: string) => {
+  const genzee = Genzee__factory.connect(contractAddress.genzee, wallet);
+  await genzee.setApprovalForAll(operator, true);
 };
