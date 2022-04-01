@@ -3,6 +3,7 @@ import { deployAll } from "./scripts/deploy";
 import * as Genzee from "./scripts/genzee";
 import * as Oddworx from "./scripts/oddworx";
 import * as OddworxStaking from "./scripts/oddworx-staking";
+import * as GoldenPass from "./scripts/golden-pass";
 import { contractAddress } from "./scripts/common";
 import { parseEther } from "ethers/lib/utils";
 
@@ -19,6 +20,9 @@ const main = async () => {
   await OddworxStaking.setupGenzees();
   await OddworxStaking.toggleGoldenPass();
   await OddworxStaking.stakeGenzees(wallets[1], ["1", "2", "3"]);
+
+  await GoldenPass.setIsSaleActive(true);
+  await GoldenPass.mint(wallets[1], 1, []);
 };
 
 main();
