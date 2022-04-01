@@ -8,8 +8,8 @@ export const startSale = async () => {
   await genzee.startSale(await genzee.TOTAL_TOKENS());
 };
 
-export const mint = async (wallet: Wallet, amount: number) => {
-  const genzee = Genzee__factory.connect(contractAddress.genzee, wallet);
+export const mint = (caller: Wallet) => async (amount: number) => {
+  const genzee = Genzee__factory.connect(contractAddress.genzee, caller);
   const unitPrice = await genzee.unitPrice();
   const tripleUnitPrice = (await genzee.tripleUnitPrice()).mul(3);
 
@@ -26,7 +26,8 @@ export const mint = async (wallet: Wallet, amount: number) => {
   }
 };
 
-export const setApproveForAll = async (wallet: Wallet, operator: string) => {
-  const genzee = Genzee__factory.connect(contractAddress.genzee, wallet);
-  await genzee.setApprovalForAll(operator, true);
-};
+export const setApproveForAll =
+  (caller: Wallet) => async (operator: string) => {
+    const genzee = Genzee__factory.connect(contractAddress.genzee, caller);
+    await genzee.setApprovalForAll(operator, true);
+  };

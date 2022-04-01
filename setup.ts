@@ -11,18 +11,18 @@ const main = async () => {
   await deployAll();
 
   await Genzee.startSale();
-  await Genzee.mint(wallets[1], 20);
-  await Genzee.setApproveForAll(wallets[1], contractAddress.staking);
+  await Genzee.mint(wallets[1])(20);
+  await Genzee.setApproveForAll(wallets[1])(contractAddress.staking);
 
   await Oddworx.toggleAdmin(contractAddress.staking);
   await Oddworx.mint(wallets[1].address, parseEther("900"));
 
   await OddworxStaking.setupGenzees();
   await OddworxStaking.toggleGoldenPass();
-  await OddworxStaking.stakeGenzees(wallets[1], ["1", "2", "3"]);
+  await OddworxStaking.stakeGenzees(wallets[1])(["1", "2", "3"]);
 
   await GoldenPass.setIsSaleActive(true);
-  await GoldenPass.mint(wallets[1], 1, []);
+  await GoldenPass.mint(wallets[1])(1, []);
 };
 
 main();

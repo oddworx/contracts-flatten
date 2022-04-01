@@ -19,18 +19,18 @@ export const toggleGoldenPass = async () => {
   await oddworx.toggleAdmin(contractAddress.golden);
 };
 
-export const stakeGenzees = async (owner: Wallet, ids: string[]) => {
+export const stakeGenzees = (caller: Wallet) => async (ids: string[]) => {
   const oddworx = OddworxStaking__factory.connect(
     contractAddress.staking,
-    owner
+    caller
   );
   await oddworx.stakeNfts(contractAddress.genzee, ids);
 };
 
-export const unstakeGenzees = async (owner: Wallet, ids: string[]) => {
+export const unstakeGenzees = (caller: Wallet) => async (ids: string[]) => {
   const oddworx = OddworxStaking__factory.connect(
     contractAddress.staking,
-    owner
+    caller
   );
   await oddworx.unstakeNfts(contractAddress.genzee, ids);
 };

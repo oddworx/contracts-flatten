@@ -8,7 +8,8 @@ export const setIsSaleActive = async (isSaleActive: boolean) => {
   await golden.setIsSaleActive(isSaleActive);
 };
 
-export const mint = async (caller: Wallet, amount: number, nftIds: string[]) => {
-  const golden = GoldenPass__factory.connect(contractAddress.golden, caller);
-  await golden.mint(amount, nftIds);
-};
+export const mint =
+  (caller: Wallet) => async (amount: number, nftIds: string[]) => {
+    const golden = GoldenPass__factory.connect(contractAddress.golden, caller);
+    await golden.mint(amount, nftIds);
+  };
