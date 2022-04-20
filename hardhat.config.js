@@ -6,6 +6,7 @@ module.exports = {
   networks: {
     hardhat: {
       loggingEnabled: true,
+      chainId: 1337
     }
   }
 };
