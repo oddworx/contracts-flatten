@@ -3,7 +3,7 @@
     "chain": "hardhat node",
     "build": "hardhat compile",
     "setup": "ts-node setup.ts",
-    "typechain": "yarn build && typechain --target ethers-v5 --out-dir scripts/contracts artifacts/contracts/Genzee.sol/Genzee.json artifacts/contracts/Oddworx.sol/Oddworx.json artifacts/contracts/OddworxStaking.sol/OddworxStaking.json artifacts/contracts/GoldenPass.sol/GoldenPass.json"
+    "typechain": "yarn build && typechain --target ethers-v5 --out-dir scripts/contracts artifacts/contracts/Genzee.sol/Genzee.json artifacts/contracts/Oddworx.sol/Oddworx.json artifacts/contracts/OddworxStaking.sol/OddworxStaking.json artifacts/contracts/GoldenPass.sol/GoldenPass.json artifacts/contracts/FoodzParty.sol/FoodzParty.json"
   },
   "dependencies": {
     "ethers": "^5.6.2",

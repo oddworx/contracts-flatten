@@ -1,9 +1,10 @@
-import { goldenPassMerkleTree } from "./common";
+import { foodzPartyMerkletree, goldenPassMerkleTree } from "./common";
 import {
   Genzee__factory,
   Oddworx__factory,
   OddworxStaking__factory,
   GoldenPass__factory,
+  FoodzParty__factory,
 } from "./contracts";
 import { wallets } from "./wallets";
 
@@ -42,6 +43,20 @@ export const deployGoldenPass = async (staking: string, genzee: string) => {
   return tx.address;
 };
 
+export const deployFoodzParty = async (goldenPass: string) => {
+  const merkleRoot = foodzPartyMerkletree().getHexRoot();
+  const uri = "foodz://";
+  const factory = new FoodzParty__factory(deployer);
+  const tx = await factory.deploy(
+    goldenPass,
+    uri,
+    merkleRoot,
+    await deployer.getAddress()
+  );
+  await tx.deployed();
+  return tx.address;
+};
+
 export const deployAll = async () => {
   const genzee = await deployGenzee();
   console.log("Genzee deployed at", genzee);
@@ -51,4 +66,6 @@ export const deployAll = async () => {
   console.log("OddworxStaking deployed at", staking);
   const golden = await deployGoldenPass(staking, genzee);
   console.log("GoldenPass deployed at", golden);
+  const foodz = await deployFoodzParty(golden);
+  console.log("FoodzParty deployed at", foodz);
 };
