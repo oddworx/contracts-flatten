@@ -13,3 +13,8 @@ export const mint =
     const golden = GoldenPass__factory.connect(contractAddress.golden, caller);
     await golden.mint(amount, nftIds);
   };
+
+export const setFoodzPartyAsController = async () => {
+  const golden = GoldenPass__factory.connect(contractAddress.golden, deployer);
+  await golden.setIsController(contractAddress.foodz, true);
+};
