@@ -1,4 +1,4 @@
-import { ethers, Wallet } from "ethers";
+import { ethers } from "ethers";
 import MerkleTree from "merkletreejs";
 import { wallets } from "./wallets";
 

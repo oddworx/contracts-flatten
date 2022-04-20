@@ -1,6 +1,6 @@
 import { Wallet } from "ethers";
 import { contractAddress } from "./common";
-import { Genzee__factory } from "./contracts/factories/Genzee__factory";
+import { Genzee__factory } from "./contracts";
 import { deployer } from "./deploy";
 
 export const startSale = async () => {

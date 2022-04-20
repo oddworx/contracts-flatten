@@ -1,6 +1,6 @@
 import { Wallet } from "ethers";
 import { contractAddress } from "./common";
-import { OddworxStaking__factory } from "./contracts/factories/OddworxStaking__factory";
+import { OddworxStaking__factory } from "./contracts";
 import { deployer } from "./deploy";
 
 export const setupGenzees = async () => {

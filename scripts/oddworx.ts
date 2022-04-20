@@ -1,6 +1,6 @@
 import { BigNumberish } from "ethers";
 import { contractAddress } from "./common";
-import { Oddworx__factory } from "./contracts/factories/Oddworx__factory";
+import { Oddworx__factory } from "./contracts";
 import { deployer } from "./deploy";
 
 export const toggleAdmin = async (address: string) => {

@@ -1,11 +1,13 @@
 import { goldenPassMerkleTree } from "./common";
-import { GoldenPass__factory } from "./contracts";
-import { Genzee__factory } from "./contracts/factories/Genzee__factory";
-import { OddworxStaking__factory } from "./contracts/factories/OddworxStaking__factory";
-import { Oddworx__factory } from "./contracts/factories/Oddworx__factory";
+import {
+  Genzee__factory,
+  Oddworx__factory,
+  OddworxStaking__factory,
+  GoldenPass__factory,
+} from "./contracts";
 import { wallets } from "./wallets";
 
-export const deployer = wallets[0]
+export const deployer = wallets[0];
 
 export const deployGenzee = async () => {
   const factory = new Genzee__factory(deployer);
