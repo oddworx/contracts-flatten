@@ -5,7 +5,7 @@ import { deployer } from "./deploy";
 
 export const setIsPresaleActive = async (isPresaleActive: boolean) => {
   const foodz = FoodzParty__factory.connect(contractAddress.foodz, deployer);
-  await foodz.setIsSaleActive(isPresaleActive);
+  await foodz.setIsPresaleActive(isPresaleActive);
 };
 
 export const setIsSaleActive = async (isSaleActive: boolean) => {
