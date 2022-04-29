@@ -21,6 +21,7 @@ const main = async () => {
 
   await OddworxStaking.setupGenzees();
   await OddworxStaking.toggleGoldenPass();
+  await OddworxStaking.toggleFoodz();
   await OddworxStaking.stakeGenzees(wallets[1])(["1", "2", "3"]);
 
   await GoldenPass.setFoodzPartyAsController();

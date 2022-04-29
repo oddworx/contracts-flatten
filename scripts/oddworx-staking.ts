@@ -19,6 +19,14 @@ export const toggleGoldenPass = async () => {
   await oddworx.toggleAdmin(contractAddress.golden);
 };
 
+export const toggleFoodz = async () => {
+  const oddworx = OddworxStaking__factory.connect(
+    contractAddress.staking,
+    deployer
+  );
+  await oddworx.toggleAdmin(contractAddress.foodz);
+};
+
 export const stakeGenzees = (caller: Wallet) => async (ids: string[]) => {
   const oddworx = OddworxStaking__factory.connect(
     contractAddress.staking,
