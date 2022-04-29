@@ -44,7 +44,7 @@ export const deployGoldenPass = async (staking: string, genzee: string) => {
   return tx.address;
 };
 
-export const deployFoodzParty = async (goldenPass: string) => {
+export const deployFoodzPartyLegacy = async (goldenPass: string) => {
   const merkleRoot = foodzPartyMerkletree().getHexRoot();
   const uri = "foodz://";
   const factory = new FoodzParty__factory(deployer);
@@ -58,7 +58,7 @@ export const deployFoodzParty = async (goldenPass: string) => {
   return tx.address;
 };
 
-export const deployFoodzPartyV2 = async (
+export const deployFoodzParty = async (
   staking: string,
   goldenPass: string,
   foodzLegacy: string,
@@ -86,8 +86,8 @@ export const deployAll = async () => {
   console.log("OddworxStaking deployed at", staking);
   const golden = await deployGoldenPass(staking, genzee);
   console.log("GoldenPass deployed at", golden);
-  const foodz = await deployFoodzParty(golden);
-  console.log("FoodzParty deployed at", foodz);
-  const foodzv2 = await deployFoodzPartyV2(staking, golden, foodz, genzee);
-  console.log("FoodzPartyV2 deployed at", foodzv2);
+  const foodzLegacy = await deployFoodzPartyLegacy(golden);
+  console.log("FoodzParty (Legacy) deployed at", foodzLegacy);
+  const foodz = await deployFoodzParty(staking, golden, foodzLegacy, genzee);
+  console.log("FoodzParty (V2) deployed at", foodz);
 };
