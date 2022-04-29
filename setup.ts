@@ -30,10 +30,9 @@ const main = async () => {
   await FoodzPartyLegacy.setIsSaleActive(true);
   await FoodzPartyLegacy.setIsPresaleActive(true);
 
-  const foodz = FoodzParty.connected()
-  foodz.setIsMigrationActive(true)
-  foodz.setIsSaleActive(true)
-  foodz.setIsPassSaleActive(true)
+  await FoodzParty.setIsMigrationActive(true)
+  await FoodzParty.setIsSaleActive(true)
+  await FoodzParty.setIsPassSaleActive(true)
 };
 
 main();
