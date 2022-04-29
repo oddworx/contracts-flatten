@@ -5,6 +5,7 @@ import {
   OddworxStaking__factory,
   GoldenPass__factory,
   FoodzParty__factory,
+  FoodzPartyV2__factory,
 } from "./contracts";
 import { wallets } from "./wallets";
 
@@ -57,6 +58,25 @@ export const deployFoodzParty = async (goldenPass: string) => {
   return tx.address;
 };
 
+export const deployFoodzPartyV2 = async (
+  staking: string,
+  goldenPass: string,
+  foodzLegacy: string,
+  genzee: string
+) => {
+  const baseUri = "foodzv2://";
+  const factory = new FoodzPartyV2__factory(deployer);
+  const tx = await factory.deploy(
+    staking,
+    goldenPass,
+    foodzLegacy,
+    genzee,
+    baseUri
+  );
+  await tx.deployed();
+  return tx.address;
+};
+
 export const deployAll = async () => {
   const genzee = await deployGenzee();
   console.log("Genzee deployed at", genzee);
@@ -68,4 +88,6 @@ export const deployAll = async () => {
   console.log("GoldenPass deployed at", golden);
   const foodz = await deployFoodzParty(golden);
   console.log("FoodzParty deployed at", foodz);
+  const foodzv2 = await deployFoodzPartyV2(staking, golden, foodz, genzee);
+  console.log("FoodzPartyV2 deployed at", foodzv2);
 };

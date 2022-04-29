@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export { FoodzParty__factory } from "./FoodzParty__factory";
+export { FoodzPartyV2__factory } from "./FoodzPartyV2__factory";
 export { Genzee__factory } from "./Genzee__factory";
 export { GoldenPass__factory } from "./GoldenPass__factory";
 export { Oddworx__factory } from "./Oddworx__factory";

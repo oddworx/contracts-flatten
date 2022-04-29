@@ -5,6 +5,7 @@ import * as Oddworx from "./scripts/oddworx";
 import * as OddworxStaking from "./scripts/oddworx-staking";
 import * as GoldenPass from "./scripts/golden-pass";
 import * as FoodzParty from "./scripts/foodz-party";
+import * as FoodzPartyV2 from "./scripts/foodz-party-v2";
 import { contractAddress } from "./scripts/common";
 import { parseEther } from "ethers/lib/utils";
 
@@ -28,7 +29,11 @@ const main = async () => {
 
   await FoodzParty.setIsSaleActive(true);
   await FoodzParty.setIsPresaleActive(true);
-  await FoodzParty.setIsPassSaleActive(true);
+
+  const foodzPartyV2 = FoodzPartyV2.connected()
+  foodzPartyV2.setIsMigrationActive(true)
+  foodzPartyV2.setIsSaleActive(true)
+  foodzPartyV2.setIsPassSaleActive(true)
 };
 
 main();
